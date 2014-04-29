@@ -16,9 +16,4 @@
 	    'prefix'    => '',
 	]);
 	$capsule->bootEloquent();
-
-	echo "<pre>";
-	print_r($_REQUEST);
-	echo "</pre>";
-	die();
 ?>

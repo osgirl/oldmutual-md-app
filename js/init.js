@@ -100,7 +100,7 @@ $(document).ready(function(){
             var html  = '<input type="text" name="plus_one_first_name" class="name autosize" value="" placeholder="First Name" data-autosize-input=\'{ "space": 1 }\' data-required />';
                 html += '<input type="text" name="plus_one_last_name" class="name autosize" value="" placeholder="Last Name" data-autosize-input=\'{ "space": 1 }\' data-required />';
                 html += '<p class="field-label">ID number </p>';
-                html += '<input type="text" class="id_number" maxlength="13" value="" />';
+                html += '<input type="text" name="plus_one_id" class="id_number" maxlength="13" value="" />';
             $('.spouse_details').html(html).slideDown( "slow" );
             $('input.autosize').autosizeInput();
             initValidate();

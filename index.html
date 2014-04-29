@@ -39,18 +39,18 @@
             <form action="process.php" method="post">
                 <fieldset>
                     <p class="field-label">My name is</p>
-                    <input type="text" name="name" class="name autosize" value="" placeholder="First Name" data-autosize-input='{ "space": 1 }' data-required />
-                    <input type="text" name="surname" class="last_name autosize" value="" placeholder="Last Name" data-autosize-input='{ "space": 1 }' data-required />
+                    <input type="text" name="first_name" class="name autosize" value="" placeholder="First Name" data-autosize-input='{ "space": 1 }' data-required />
+                    <input type="text" name="last_name" class="last_name autosize" value="" placeholder="Last Name" data-autosize-input='{ "space": 1 }' data-required />
                     <p class="field-label">and I was born on</p>
                     <input type="text" name="birthday" class="birthday autosize number_only" maxlength="2" value="" placeholder="dd" data-autosize-input='{ "space": 1 }' data-validate="day" />
                     <input type="text" name="birthmonth" class="birthmonth autosize number_only" maxlength="2" value="" placeholder="mm" data-autosize-input='{ "space": 1 }' data-validate="month" />
                     <input type="text" name="birthyear" class="birthyear autosize number_only" maxlength="4" value="" placeholder="yy" data-autosize-input='{ "space": 1 }' data-required />
                 
                     <!-- Hidden values -->
-                    <input type="hidden" name="plus_one" value="" />
-                    <input type="hidden" name="plus_one_type" value="" />
-                    <input type="hidden" name="dietary_requirement" value="" />
-                    <input type="hidden" name="dietary_requirement_type" value="" />
+                    <input type="hidden" name="plus_one" value="false" />
+                    <input type="hidden" name="plus_one_type" value="none" />
+                    <input type="hidden" name="dietary_requirement" value="false" />
+                    <input type="hidden" name="dietary_requirement_type" value="none" />
                 </fieldset>
 
                 
