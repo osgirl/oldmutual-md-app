@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Old Mutual</title>
+
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="css/screen.css">
+<link rel="stylesheet" href="css/grid-105.css" />
+
+<script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="header">
+    <div class="container_105">
+        <div class="grid_105">
+            <h1 class="old-mutual">Old Mutual</h1>
+            <h2 class="headline">Answer a few questions so that the appropriate accommodation can be sourced and organised.</h2>
+            <h3 class="subheadline">We ensure you that the information you supply is strictly confidential.</h3>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+</div>
+<div class="content">
+    <div class="container_105">
+        <div class="grid_105 form-container">
+            <form action="process.php" method="post">
+                <fieldset>
+                    <p class="field-label">My name is</p>
+                    <input type="text" name="name" class="name autosize" value="" placeholder="First Name" data-autosize-input='{ "space": 1 }' data-required />
+                    <input type="text" name="surname" class="last_name autosize" value="" placeholder="Last Name" data-autosize-input='{ "space": 1 }' data-required />
+                    <p class="field-label">and I was born on</p>
+                    <input type="text" name="birthday" class="birthday autosize number_only" maxlength="2" value="" placeholder="dd" data-autosize-input='{ "space": 1 }' data-validate="day" />
+                    <input type="text" name="birthmonth" class="birthmonth autosize number_only" maxlength="2" value="" placeholder="mm" data-autosize-input='{ "space": 1 }' data-validate="month" />
+                    <input type="text" name="birthyear" class="birthyear autosize number_only" maxlength="4" value="" placeholder="yy" data-autosize-input='{ "space": 1 }' data-required />
+                
+                    <!-- Hidden values -->
+                    <input type="hidden" name="plus_one" value="" />
+                    <input type="hidden" name="plus_one_type" value="" />
+                    <input type="hidden" name="dietary_requirement" value="" />
+                    <input type="hidden" name="dietary_requirement_type" value="" />
+                </fieldset>
+
+                
+                <fieldset class="children-trigger">
+                    <p class="field-label">If I win I</p>
+                    <span class="check_select">
+                        <span class="option" data-name="plus_one" data-value="true">will</span> / <span class="option" data-name="plus_one" data-value="false">will not</span>
+                    </span>
+                    <p class="field-label">bring my </p>
+                    <span class="check_select">
+                        <span class="option" data-name="plus_one_type" data-value="spouse">spouse</span> / <span class="option" data-name="plus_one_type" data-value="partner">partner</span>
+                    </span>
+                    
+                    <div class="spouse_details">
+                        <input type="text" name="plus_one_first_name" class="name autosize" value="" placeholder="First Name" data-autosize-input='{ "space": 1 }'>
+                        <input type="text" name="plus_one_last_name" class="name autosize" value="" placeholder="Last Name" data-autosize-input='{ "space": 1 }'>
+                        <p class="field-label">ID number </p>
+                        <input type="text" class="id_number" maxlength="13" value="" />
+                    </div>
+
+                    <p class="field-label">I have</p>
+                    
+                    <input type="text" name="children" class="children autosize" id='children' maxlength="1" value="" placeholder="0" >
+                    <p class="field-label">children</p>
+                </fieldset>
+
+                <fieldset class='children-container' style='display:none;'></fieldset>
+
+                <fieldset>
+                    <p class="field-label">I</p>
+                    <span class="check_select">
+                        <span class="option" data-name="dietary_requirement" data-value="true">have</span> / <span class="option" data-name="dietary_requirement" data-value="false">do not have</span>
+                    </span>
+                    <p class="field-label">a special dietary requirement.</p>
+                    <div class="dietary_requirements"></div>
+                </fieldset>
+
+                <fieldset>
+                    <input type="submit" value="" class="form-button">
+                </fieldset>    
+            </form>
+        </div>
+        <div class="grid_105 footervisual">
+            &nbsp;
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container_105">
+        <div class="grid_105">
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+<script src="js/jquery.autosize.input.js"></script>
+<script src="js/jquery-validate.min.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>
