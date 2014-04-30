@@ -23,7 +23,7 @@
 	$submission->last_name = $_POST['last_name'];
 	$submission->birthdate = date( 'Y-m-d', strtotime($_POST['birthyear'].'-'.$_POST['birthmonth'].'-'.$_POST['birthday']));
 	//If there is a plus one
-	if ($_POST['plus_one']) {
+	if ($_POST['plus_one'] === true) {
 		$submission->plus_one = $_POST['plus_one_type'];
 		$submission->plus_one_first_name = $_POST['plus_one_first_name'];
 		$submission->plus_one_last_name = $_POST['plus_one_last_name'];

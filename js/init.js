@@ -33,11 +33,19 @@ $(document).ready(function(){
             childrenAmount = $(this).val();
             $('.children-container').empty();
 
-            console.log(childrenAmount);
-            
             for(var i = 1; i <= childrenAmount; i++) {
                     //Implement the seperator
                     var seperator = '';
+
+                    //Check if children should be plural or singular
+                    if (childrenAmount == 1) {
+                        $('.child').html('child.');
+                        $('.has_children').html('My child\'s name is');
+                    }
+                    if (childrenAmount > 1) {
+                        $('.child').html('children.');
+                        $('.has_children').html('Their names are:');
+                    }
 
                     if (childrenAmount == 2) {
                         seperator = '<p class="field-label">and</div>';
@@ -68,7 +76,7 @@ $(document).ready(function(){
                     $('.children-container').append(childInput);
 
             }
-
+            $('.has_children').show();
             $('.children-container').slideDown( "slow" );
             $('input.autosize').autosizeInput();
             //data-rule-required="true"lidate();
@@ -77,7 +85,7 @@ $(document).ready(function(){
         else{
             $('.children-container').slideUp( "slow", function(){
                 $(this).empty();
-                //data-rule-required="true"lidate();
+                $('.has_children').hide();
             });
         }
     });
@@ -102,13 +110,14 @@ $(document).ready(function(){
                 html += '<input type="text" name="plus_one_last_name" class="name autosize" value="" placeholder="Last Name" data-autosize-input=\'{ "space": 1 }\' data-rule-required="true" />';
                 html += '<p class="field-label">ID number </p>';
                 html += '<input type="text" name="plus_one_id" class="id_number" maxlength="13" value="" />';
-            $('.spouse_details').html(html).slideDown( "slow" );
+                html += '<span class="plus_one_terms">By supplying your spouse / partner\'s ID number we can check if he / she is an Old Mutual policy holder and give you an additional entry into the prize draw.</span>';
+            $('.plus_one_details').html(html).slideDown( "slow" );
             $('input.autosize').autosizeInput();
             //data-rule-required="true"lidate();
             initNumbersOnly()
         }
         else if (name == 'plus_one' && value === false) {
-            $('.spouse_details').slideUp( "slow", function(){
+            $('.plus_one_details').slideUp( "slow", function(){
                 $(this).empty();
                 //data-rule-required="true"lidate();
             });
