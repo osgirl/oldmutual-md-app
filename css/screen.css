@@ -609,6 +609,11 @@ textarea {
     resize: vertical;
 }
 
+p {
+    color: #808080;
+    text-align: center;
+}
+
 /*------------------------------------------------------------------------------
 Helper Classes
 ------------------------------------------------------------------------------*/
@@ -835,7 +840,7 @@ Main Styles
 }
 
 .header {
-    background: url(../images/divider.jpg) center bottom no-repeat;
+    background: url(../images/divider.jpg) center bottom repeat-x;
     position: relative;
     padding-bottom: 50px;
 }

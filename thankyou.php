@@ -36,7 +36,7 @@
 <div class="content">
     <div class="container_105">
         <div class="grid_105 form-container">
-            <h1>Thank You</h1>
+            <h2 class="headline">Thank You</h2>
             <p>Thank you for your interest in the Breakfast in Bed competition. You have been successfully entered into the draw and will be notified via telephone by 31 July 2014 if you are one of our lucky winners.</p>
         </div>
         <div class="grid_105 footervisual">

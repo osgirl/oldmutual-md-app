@@ -57,26 +57,27 @@ $(document).ready(function(){
                     }
 
                     var childInput  = "<div class='child_"+i+"'>";
-                        childInput += " <input type='text' name='child["+i+"][child_name]' class='child1 autosize' value='' placeholder='First Name' data-required />";
+                        childInput += " <input type='text' name='child["+i+"][child_name]' class='child1 autosize' value='' placeholder='First Name' data-rule-required='true' />";
                         childInput += " <p class='field-label'>born on</p>";
-                        childInput += " <input type='text' name='child["+i+"][birth_day]' maxlength='2' class='child1birthday number_only autosize' value='' placeholder='dd' data-validate='day' />";
-                        childInput += " <input type='text' name='child["+i+"][birth_month]' maxlength='2' class='child1birthmonth number_only autosize' value='' placeholder='mm' data-validate='month' />";
-                        childInput += " <input type='text' name='child["+i+"][birth_year]' maxlength='4' class='child1birthyear number_only autosize' value='' placeholder='yy' data-required />";
+                        childInput += " <input type='text' name='child["+i+"][birth_day]' maxlength='2' class='birthday number_only autosize' value='' placeholder='dd' data-rule-required='true' data-rule-range='[1, 31]' />";
+                        childInput += " <input type='text' name='child["+i+"][birth_month]' maxlength='2' class='birthmonth number_only autosize' value='' placeholder='mm' data-rule-required='true' data-rule-range='[1, 12]' />";
+                        childInput += " <input type='text' name='child["+i+"][birth_year]' maxlength='4' class='birthyear number_only autosize' value='' placeholder='yy' data-rule-required='true' />";
                         childInput +=   seperator;
                         childInput += "</div>";
 
                     $('.children-container').append(childInput);
+
             }
 
             $('.children-container').slideDown( "slow" );
             $('input.autosize').autosizeInput();
-            initValidate();
+            //data-rule-required="true"lidate();
             initNumbersOnly()
         }
         else{
             $('.children-container').slideUp( "slow", function(){
                 $(this).empty();
-                initValidate();
+                //data-rule-required="true"lidate();
             });
         }
     });
@@ -97,19 +98,19 @@ $(document).ready(function(){
 
         //Show / hide partner details
         if (name == 'plus_one' && value === true) {
-            var html  = '<input type="text" name="plus_one_first_name" class="name autosize" value="" placeholder="First Name" data-autosize-input=\'{ "space": 1 }\' data-required />';
-                html += '<input type="text" name="plus_one_last_name" class="name autosize" value="" placeholder="Last Name" data-autosize-input=\'{ "space": 1 }\' data-required />';
+            var html  = '<input type="text" name="plus_one_first_name" class="name autosize" value="" placeholder="First Name" data-autosize-input=\'{ "space": 1 }\' data-rule-required="true" />';
+                html += '<input type="text" name="plus_one_last_name" class="name autosize" value="" placeholder="Last Name" data-autosize-input=\'{ "space": 1 }\' data-rule-required="true" />';
                 html += '<p class="field-label">ID number </p>';
                 html += '<input type="text" name="plus_one_id" class="id_number" maxlength="13" value="" />';
             $('.spouse_details').html(html).slideDown( "slow" );
             $('input.autosize').autosizeInput();
-            initValidate();
+            //data-rule-required="true"lidate();
             initNumbersOnly()
         }
         else if (name == 'plus_one' && value === false) {
             $('.spouse_details').slideUp( "slow", function(){
                 $(this).empty();
-                initValidate();
+                //data-rule-required="true"lidate();
             });
             
         }
@@ -127,7 +128,7 @@ $(document).ready(function(){
         else if (name == 'dietary_requirement' && value === false) {
             $('.dietary_requirements').slideUp( "slow", function(){
                 $(this).empty();
-                initValidate();
+                //data-rule-required="true"lidate();
             });
         }
     });
@@ -135,37 +136,24 @@ $(document).ready(function(){
     // Expand/contract text inputs based on their content
     $('input.autosize').autosizeInput();
     initNumbersOnly()
-    initValidate();
-});
+    //data-rule-required="true"lidate();
 
-function initValidate() {
-    //Validation
     $('form').validate({
-        eachInvalidField: function() {
-            $(this).addClass('error');
-        },
-        eachValidField: function() {
-            $(this).removeClass('error');
-        }
-    });
-
-    jQuery.validateExtend({
-        day : {
-            required : true,
-            pattern : /^[0-9]+$/,
-            conditional : function(value) {
-                return Number(value) <= 31;
+        rules: {
+            birthday: {
+                required: true,
+                range: [1, 31]
+            },
+            birthmonth: {
+                required: true,
+                range: [1, 12]
             }
         },
-        month : {
-            required : true,
-            pattern : /^[0-9]+$/,
-            conditional : function(value) {
-                return Number(value) <= 12;
-            }
+        errorPlacement: function(error, element) {
+            return false;
         }
     });
-}
+});
 
 function initNumbersOnly() {
     //Only allow number input
