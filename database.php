@@ -5,7 +5,7 @@
 
 	//Register a new capsule for DB configuration	
 	$capsule = new Capsule;
-	$capsule->addConnection([
+	$capsule->addConnection(array(
 	    'driver'    => 'mysql',
 	    'host'      => 'localhost',
 	    'database'  => 'old-mutual-MD-app',
@@ -14,6 +14,6 @@
 	    'charset'   => 'utf8',
 	    'collation' => 'utf8_unicode_ci',
 	    'prefix'    => '',
-	]);
+	));
 	$capsule->bootEloquent();
 ?>

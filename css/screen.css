@@ -287,44 +287,6 @@ sub {
     bottom: -0.25em;
 }
 
-/* ==========================================================================
-   Lists
-   ========================================================================== */
-
-/*
- * Addresses margins set differently in IE 6/7.
- */
-
-dl,
-menu,
-ol,
-ul {
-    margin: 1em 0;
-}
-
-dd {
-    margin: 0 0 0 40px;
-}
-
-/*
- * Addresses paddings set differently in IE 6/7.
- */
-
-menu,
-ol,
-ul {
-    padding: 0 0 0 40px;
-}
-
-/*
- * Corrects list images handled incorrectly in IE 7.
- */
-
-nav ul,
-nav ol {
-    list-style: none;
-    list-style-image: none;
-}
 
 /* ==========================================================================
    Embedded content
@@ -348,17 +310,6 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-
-/*
- * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
- */
-
-figure {
-    margin: 0;
-}
 
 /* ==========================================================================
    Forms
@@ -610,8 +561,31 @@ textarea {
 }
 
 p {
-    color: #808080;
+    color: #333333;
     text-align: center;
+    font-size: 17px;
+}
+
+h1 {
+    font-family: FuturaLT-Bold, sans-serif; 
+    color: #6eab24;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+a {
+    color: #006150;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+a:visted {
+    color: #006150;
+}
+
+a:hover {
+    color: #006150;
 }
 
 /*------------------------------------------------------------------------------
@@ -727,92 +701,6 @@ Helper Classes
     *zoom: 1;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
 
 /*------------------------------------------------------------------------------
 Chrome Frame prompt
@@ -839,14 +727,27 @@ Main Styles
  	filter: alpha(opacity=90);
 }
 
+.container_105 {
+    margin: 0 auto;
+    width: 1050px;
+    padding: 0 20px;
+}
+
 .header {
     background: url(../images/divider.jpg) center bottom repeat-x;
     position: relative;
     padding-bottom: 50px;
+    min-width: 1050px;
+}
+
+.header.thankyou {
+    background: none;
+    padding: 0;
 }
 
 .header .container_105 {
     padding-top: 20px;
+    height: 147px;
 }
 
 .old-mutual {
@@ -892,7 +793,6 @@ Main Styles
 .content .container_105 {
     position: relative;
     overflow: visible;
-    padding-bottom: 285px;
 }
 
 .form-container {
@@ -918,15 +818,21 @@ fieldset {
     letter-spacing: -1px;
 }
 
+.field-label.checkbox {
+    color: #006150;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
 input[type="text"] {
     color: #006150;
     font-size: 26px;
-    line-height: 60px;
+    height: 60px;
     display: inline-block;
     border: none;
     border-bottom: 2px dotted #006150;
     background: none;
-    margin-right: 10px;
+    margin-right: 2px;
     padding: 0px 9px;
     transition: width 0.25s;
 }
@@ -934,7 +840,7 @@ input[type="text"] {
 input[type="text"].id_number {
     margin-top: 10px;
     background: url(../images/id_input_bg.jpg) no-repeat;
-    width: 521px;
+    width: 455px;
     height: 30px;
     border: none;
     margin: 0;
@@ -942,6 +848,30 @@ input[type="text"].id_number {
     padding-left: 8px;
     letter-spacing: 21px;
     line-height: 30px;
+}
+
+input.name {
+    width: 146px;
+}
+
+input.last_name {
+    width: 143px;
+}
+
+input.birthday {
+    width: 47px;
+}
+
+input.birthmonth {
+    width: 63px;
+}
+
+input.birthyear {
+    width: 45px;
+}
+
+input.children {
+    width: 43px;
 }
 
 input.error {
@@ -989,13 +919,33 @@ input.error:-ms-input-placeholder {
     margin-top: 15px;
 }
 
-.content .container_105 .footervisual {
+.form-button.afr {
+    background: url(../images/btn-enter-afr.jpg) no-repeat bottom center;
+}
+
+.footervisual {
     height: 285px;
-    width: 1106px;
-    background: url(../images/bg-footer.jpg) no-repeat bottom center;
-    position: absolute;
-    bottom: 0px;
-    left: -28px;
+    min-width: 1050px;
+}
+
+.footer_img {
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-footer.jpg) no-repeat center;
+    z-index: 2;
+    position: relative;
+}
+
+.afr .footer_img {
+    background: url(../images/bg-footer-afr.jpg) no-repeat center;
+}
+
+.footervisual .footer_infinate {
+    height: 119px;
+    background: #70aa31;
+    top: -119px;
+    position: relative;
+    z-index: 1;
 }
 
 .check_select {
@@ -1021,6 +971,11 @@ input.error:-ms-input-placeholder {
     font-size: 40px;
 }
 
+.check_select.select-error:before,
+.check_select.select-error:after {
+    color: #d96962;
+}
+
 .plus_one_terms {
     font-size: 16px;
     color: #005c4c;
@@ -1032,4 +987,69 @@ input.error:-ms-input-placeholder {
 .plus_one_details,
 .has_children {
     display: none;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer ul {
+    display: inline-block;
+    padding: 0;
+}
+
+.footer li {
+    float: left;
+    list-style: none;
+}
+
+.footer li a {
+    color: #999999;
+    font-size: 13px;
+    text-decoration: none;
+    border-right: 1px solid #999999;
+    padding: 0 7px;
+}
+
+.footer li a.omega {
+    border-right: none;
+}
+
+.footer li a:visited {
+    color: #999999;
+}
+
+.footer li a:hover {
+    text-decoration: underline;
+}
+
+.thankyou-container {
+    margin-bottom: 200px;
+}
+
+.home_btn {
+    width: 342px;
+    height: 51px;
+    background: url(../images/home_btn.jpg) no-repeat;
+    margin: 50px auto;
+    display: block;
+}
+
+/*iCheck*/
+.icheckbox {
+    width: 29px;
+    height: 27px;
+    background: url(../images/icheck.jpg) no-repeat bottom left;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.icheckbox.checked,
+.icheckbox.error.checked {
+    background: url(../images/icheck.jpg) no-repeat top left;
+}
+
+.icheckbox.error {
+    background: url(../images/icheck_error.jpg) no-repeat;
 }
